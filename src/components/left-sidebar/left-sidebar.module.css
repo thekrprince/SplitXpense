@@ -1,0 +1,13 @@
+.leftsidebar {
+  width: 20%;
+  padding-right: 8px;
+}
+
+.addFriend {
+  display: flex;
+  justify-content: space-between;
+}
+
+.friend span {
+  margin-left: 0.3rem;
+}

@@ -1,0 +1,6 @@
+.dashboard {
+  width: 967px;
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+}
