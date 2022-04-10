@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className={classes.header}>
       <div className={classes.heading}>
-        <a href="/">Splitwise</a>
+        <a href="/">SplitXpense</a>
         <p>Person</p>
       </div>
     </div>
