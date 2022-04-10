@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
 import classes from './left-sidebar.module.css';
@@ -19,6 +19,10 @@ const friends = [
 ];
 
 const LeftSidebar = () => {
+  const theme = localStorage.getItem('theme');
+
+  console.log(theme);
+
   return (
     <div className={classes.leftsidebar}>
       <p>Dashboard</p>
@@ -28,8 +32,8 @@ const LeftSidebar = () => {
       <div className={classes.people}>
         <div className={classes.addFriend}>
           <span>FRIENDS</span>
-          <span>
-            <FontAwesomeIcon icon={faPlus} className={classes.plusIcon} />
+          <span className={classes.plusIcon}>
+            <FontAwesomeIcon icon={faPlus} />
             add
           </span>
         </div>

@@ -8,8 +8,6 @@ function App() {
   const darkTheme = localStorage.getItem('theme');
   const [theme, setTheme] = useState(darkTheme || 'light');
 
-  console.log(theme);
-
   useEffect(() => {
     const favicon = document.getElementById('favicon');
     favicon.setAttribute('href', icon);

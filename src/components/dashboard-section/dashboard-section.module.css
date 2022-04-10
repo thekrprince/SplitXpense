@@ -1,4 +1,79 @@
 .dbSection {
   width: 80%;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 0 1rem;
+}
+
+/** Title & Button section **/
+
+.titleBtnSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.titleBtnSection h2 {
+  font-weight: 600;
+}
+
+.buttons button {
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.buttons button:first-child {
+  margin: 0.5rem;
+  padding: 0 10px;
+  background-color: #FA4D02;
+}
+
+.buttons button:last-child {
+  margin: 0.5rem;
+  padding: 0 10px;
+  background-color: #5bc5a7;
+}
+
+/** Balance section  **/
+
+.balance {
+  padding: 0.5rem 0;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  color: #5bc5a7;
+  font-size: 15px;
+}
+
+.totalbalance, .owe, .owed {
+  width: 33%;
+}
+
+.totalbalance, .owe {
+  border-right: 1px solid #ccc;
+}
+
+/* Expense */
+.expenseData {
+  display: flex;
+}
+
+.oweData {
+  border-right: 1px solid #ccc;
+}
+
+.oweData, .getBackData {
+  width: 50%;
+}
+
+.expenseData h4 {
+  color: #5bc5a7;
+}
+
+.getBackData h4 {
+  float: right;
 }
