@@ -1,3 +1,8 @@
+[data-theme=dark] {
+  background: #1e2024;
+  color: #fff;
+}
+
 .section {
   display: flex;
   justify-content: center;

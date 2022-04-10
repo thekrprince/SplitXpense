@@ -25,3 +25,12 @@
   color: #fff;
   font-size: 20px;
 }
+
+.theme {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.theme:hover {
+  color: yellow;
+}
