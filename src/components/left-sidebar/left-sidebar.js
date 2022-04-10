@@ -29,7 +29,7 @@ const LeftSidebar = () => {
         <div className={classes.addFriend}>
           <span>FRIENDS</span>
           <span>
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon icon={faPlus} className={classes.plusIcon} />
             add
           </span>
         </div>
