@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './components/header/header';
-import Dashboard from './components/dashboard/dashboard';
+import Dashboard from './pages/dashboard/dashboard';
 import icon from './images/split-icon.png';
 import './App.css';
 
