@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,8 +12,10 @@ const Modal = ({
   setOpen,
   modalInput,
   setModalInput,
-  addFriendHandler,
+  modalSubmitHandler,
 }) => {
+  const [message, setMessage] = useState(false);
+
   const closeHandler = () => {
     setOpen(false);
   };
@@ -22,9 +24,16 @@ const Modal = ({
     setModalInput(e.target.value);
   };
 
-  const modalSubmitHandler = () => {
-    addFriendHandler();
-    console.log('submitted');
+  const blurHandler = () => {
+    if (modalInput.trim() === '') {
+      setMessage(true);
+    } else {
+      setMessage(false);
+    }
+  };
+
+  const modalSubmitBtnHandler = () => {
+    modalSubmitHandler();
   };
 
   if (!open) return;
@@ -34,22 +43,28 @@ const Modal = ({
       <div className="overlay"></div>
       <div className="modal">
         <div className="modal-title">
-          <h2>{title}</h2>
+          <span>{title}</span>
           <FontAwesomeIcon
             icon={faClose}
             className="close"
             onClick={closeHandler}
           />
         </div>
-        <input
-          type="text"
-          placeholder={input1placeholder}
-          className="modal-input"
-          value={modalInput}
-          onChange={inputChangeHandler}
-        />
-        <br />
-        <button onClick={modalSubmitHandler}>{btnText}</button>
+        <div>
+          <input
+            type="text"
+            placeholder={input1placeholder}
+            className="modal-input"
+            value={modalInput}
+            onChange={inputChangeHandler}
+            onBlur={blurHandler}
+          />
+          <br />
+          {message && (
+            <span className="msg">**Please enter your friend name**</span>
+          )}
+        </div>
+        <button onClick={modalSubmitBtnHandler}>{btnText}</button>
       </div>
     </>,
     document.getElementById('portal')
