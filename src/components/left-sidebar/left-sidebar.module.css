@@ -28,6 +28,11 @@
   padding: 3px 2px;
 }
 
+.friend:hover {
+  font-weight: 600;
+  color: #5bc5a7;
+}
+
 .friend span {
   margin-left: 0.3rem;
   cursor: pointer;
