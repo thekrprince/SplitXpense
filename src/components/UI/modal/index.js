@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,30 +6,14 @@ import './style.css';
 
 const Modal = ({
   title = 'Add',
-  input1placeholder = 'Enter value',
   btnText = 'Submit',
   open = false,
   setOpen,
-  modalInput,
-  setModalInput,
   modalSubmitHandler,
+  children,
 }) => {
-  const [message, setMessage] = useState(false);
-
   const closeHandler = () => {
     setOpen(false);
-  };
-
-  const inputChangeHandler = (e) => {
-    setModalInput(e.target.value);
-  };
-
-  const blurHandler = () => {
-    if (modalInput.trim() === '') {
-      setMessage(true);
-    } else {
-      setMessage(false);
-    }
   };
 
   const modalSubmitBtnHandler = () => {
@@ -50,20 +34,7 @@ const Modal = ({
             onClick={closeHandler}
           />
         </div>
-        <div>
-          <input
-            type="text"
-            placeholder={input1placeholder}
-            className="modal-input"
-            value={modalInput}
-            onChange={inputChangeHandler}
-            onBlur={blurHandler}
-          />
-          <br />
-          {message && (
-            <span className="msg">**Please enter your friend name**</span>
-          )}
-        </div>
+        {children}
         <button onClick={modalSubmitBtnHandler}>{btnText}</button>
       </div>
     </>,

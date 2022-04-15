@@ -10,6 +10,7 @@ const LeftSidebar = ({ activePeople, setActivePeople }) => {
   const [modalInput, setModalInput] = useState('');
   const [friends, setFriends] = useState([]);
   const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState(false);
 
   useEffect(() => {
     // Fetching data in starting
@@ -57,6 +58,14 @@ const LeftSidebar = ({ activePeople, setActivePeople }) => {
     setActivePeople({});
   };
 
+  const blurHandler = () => {
+    if (modalInput.trim() === '') {
+      setMessage(true);
+    } else {
+      setMessage(false);
+    }
+  };
+
   return (
     <>
       <div className={classes.leftsidebar}>
@@ -99,13 +108,27 @@ const LeftSidebar = ({ activePeople, setActivePeople }) => {
       </div>
       <Modal
         open={open}
-        input1placeholder={'Enter name'}
         title={'Add Friend'}
         setOpen={setOpen}
         modalInput={modalInput}
         setModalInput={setModalInput}
         modalSubmitHandler={addFriendHandler}
-      />
+      >
+        <div>
+          <input
+            type="text"
+            placeholder="Enter name"
+            className="modal-input"
+            value={modalInput}
+            onChange={(e) => setModalInput(e.target.value)}
+            onBlur={blurHandler}
+          />
+          <br />
+          {message && (
+            <span className="msg">**Please enter your friend name**</span>
+          )}
+        </div>
+      </Modal>
     </>
   );
 };
