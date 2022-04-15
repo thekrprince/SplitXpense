@@ -1,0 +1,11 @@
+.item-lists {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  margin-right: 10px;
+  color: #999;
+}

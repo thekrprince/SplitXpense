@@ -3,11 +3,20 @@
   padding-right: 8px;
   color: #999;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
 .leftsidebar > p {
   font-weight: 700;
   cursor: pointer;
+}
+
+.leftDashboard {
+  box-sizing: border-box;
+}
+
+.leftDashboard:hover {
+  font-size: 15px;
 }
 
 .addFriend {
@@ -28,12 +37,24 @@
   padding: 3px 2px;
 }
 
+.friend, .activeFrnd {
+  box-sizing: border-box;
+  padding: 0 4px;
+}
+
 .friend:hover {
   font-weight: 600;
   color: #5bc5a7;
+  cursor: pointer;
 }
 
-.friend span {
+.activeFrnd span,.friend span {
   margin-left: 0.3rem;
   cursor: pointer;
+}
+
+.activeFrnd {
+  color: #5bc5a7;
+  font-weight: 700;
+  border-left: 4px solid #5bc5a7;
 }

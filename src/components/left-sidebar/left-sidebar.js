@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Modal from '../UI/modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
 import classes from './left-sidebar.module.css';
 
-const LeftSidebar = ({ setActivePeople }) => {
+const LeftSidebar = ({ activePeople, setActivePeople }) => {
   const [inputVal, setInputVal] = useState('');
   const [modalInput, setModalInput] = useState('');
   const [friends, setFriends] = useState([]);
@@ -28,6 +29,7 @@ const LeftSidebar = ({ setActivePeople }) => {
       name: modalInput.trim(),
       owe: 0,
       getBack: 0,
+      id: uuidv4(),
       items: [],
     };
 
@@ -46,14 +48,21 @@ const LeftSidebar = ({ setActivePeople }) => {
 
   // Setting friend active
   const activeFriendHandler = (index) => {
-    const frnd = friends[index];
+    const filterFrnd = friends.filter((friend) => friend['id'] === index);
+    let [frnd] = filterFrnd;
     setActivePeople(frnd);
+  };
+
+  const dashboardHandler = () => {
+    setActivePeople({});
   };
 
   return (
     <>
       <div className={classes.leftsidebar}>
-        <p>Dashboard</p>
+        <p className={classes.leftDashboard} onClick={dashboardHandler}>
+          Dashboard
+        </p>
         <div className={classes.search}>
           <input
             type="text"
@@ -75,8 +84,12 @@ const LeftSidebar = ({ setActivePeople }) => {
             friends.map((friend, i) => (
               <p
                 key={i}
-                className={classes.friend}
-                onClick={() => activeFriendHandler(i)}
+                className={
+                  activePeople.id === friend.id
+                    ? classes.activeFrnd
+                    : classes.friend
+                }
+                onClick={() => activeFriendHandler(friend['id'])}
               >
                 <FontAwesomeIcon icon={faUser} />
                 <span>{friend.name}</span>
