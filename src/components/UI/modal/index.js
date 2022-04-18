@@ -6,18 +6,13 @@ import './style.css';
 
 const Modal = ({
   title = 'Add',
-  btnText = 'Submit',
   open = false,
   setOpen,
-  modalSubmitHandler,
+  titleClass = 'modal-title',
   children,
 }) => {
   const closeHandler = () => {
     setOpen(false);
-  };
-
-  const modalSubmitBtnHandler = () => {
-    modalSubmitHandler();
   };
 
   if (!open) return;
@@ -26,7 +21,7 @@ const Modal = ({
     <>
       <div className="overlay"></div>
       <div className="modal">
-        <div className="modal-title">
+        <div className={titleClass}>
           <span>{title}</span>
           <FontAwesomeIcon
             icon={faClose}
@@ -35,7 +30,6 @@ const Modal = ({
           />
         </div>
         {children}
-        <button onClick={modalSubmitBtnHandler}>{btnText}</button>
       </div>
     </>,
     document.getElementById('portal')

@@ -110,8 +110,6 @@ const LeftSidebar = ({ activePeople, setActivePeople }) => {
         open={open}
         title={'Add Friend'}
         setOpen={setOpen}
-        modalInput={modalInput}
-        setModalInput={setModalInput}
         modalSubmitHandler={addFriendHandler}
       >
         <div>
