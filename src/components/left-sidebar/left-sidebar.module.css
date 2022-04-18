@@ -58,3 +58,14 @@
   font-weight: 700;
   border-left: 4px solid #5bc5a7;
 }
+
+.submitFrnd {
+  cursor: pointer;
+  height: 2rem;
+  width: 50%;
+  background-color: #ff652f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}

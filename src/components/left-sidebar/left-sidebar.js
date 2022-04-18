@@ -106,12 +106,7 @@ const LeftSidebar = ({ activePeople, setActivePeople }) => {
             ))}
         </div>
       </div>
-      <Modal
-        open={open}
-        title={'Add Friend'}
-        setOpen={setOpen}
-        modalSubmitHandler={addFriendHandler}
-      >
+      <Modal open={open} title={'Add Friend'} setOpen={setOpen}>
         <div>
           <input
             type="text"
@@ -126,6 +121,9 @@ const LeftSidebar = ({ activePeople, setActivePeople }) => {
             <span className="msg">**Please enter your friend name**</span>
           )}
         </div>
+        <button onClick={addFriendHandler} className={classes.submitFrnd}>
+          Submit
+        </button>
       </Modal>
     </>
   );

@@ -77,3 +77,60 @@
 .getBackData h4 {
   float: right;
 }
+
+/********** Modal styling **********/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.modalBtns {
+  border-top: 1px solid #ccc;
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+.modalBtns button {
+  width: 5rem;
+  height: 2rem;
+  float: right;
+  cursor: pointer;
+  border: none;
+}
+
+.modalBtns button:first-child {
+  background: #5bc5a7;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+.modalBtns button:last-child {
+  background: #ccc;
+}
+
+.modalBtns button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modalBtns button:active {
+  transform: scale(0.98);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
+}
+
+.expenseModalInput input {
+  border: none;
+  height: 2rem;
+  border-bottom: 1px dotted #ccc;
+  font-size: 14px;
+}
+
+.expenseModalInput input:focus {
+  outline: none;
+}
