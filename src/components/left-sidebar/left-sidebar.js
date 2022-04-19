@@ -5,24 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
 import classes from './left-sidebar.module.css';
 
-const LeftSidebar = ({ activePeople, setActivePeople }) => {
+const LeftSidebar = ({
+  activePeople,
+  setActivePeople,
+  friends,
+  setFriends,
+}) => {
   const [inputVal, setInputVal] = useState('');
   const [modalInput, setModalInput] = useState('');
-  const [friends, setFriends] = useState([]);
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState(false);
-
-  useEffect(() => {
-    // Fetching data in starting
-    let retrievePeople = localStorage.getItem('friends');
-    console.log(retrievePeople);
-    if (retrievePeople === null) {
-      localStorage.setItem('friends', JSON.stringify([]));
-      retrievePeople = localStorage.getItem('friends');
-    }
-    const people = JSON.parse(retrievePeople);
-    setFriends(people);
-  }, []);
 
   // Add friend function
   const addFriendHandler = () => {
