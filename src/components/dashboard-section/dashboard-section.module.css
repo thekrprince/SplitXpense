@@ -134,3 +134,57 @@ input[type=number] {
 .expenseModalInput input:focus {
   outline: none;
 }
+
+.listInput {
+  display: inline;
+  padding: 0;
+}
+
+.listInput li {
+  list-style: none;
+  display: inline;
+}
+
+.selectedList {
+  box-sizing: border-box;
+  padding: 2px 8px;
+  margin: 2px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.cancelIcon {
+  margin-left: 3px;
+  color: #999;
+  cursor: pointer;
+}
+
+.cancelIcon:hover {
+  color: rgb(126, 126, 126);
+  transform: scale(1.15);
+}
+
+.filtered {
+  position: absolute;
+  top: 4rem;
+  background: #fff;
+  width: 90%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0;
+}
+
+.filtered li {
+  cursor: pointer;
+  list-style: none;
+  padding: 8px;
+}
+
+.filtered li:hover {
+  background: rgb(206, 206, 206);
+}
+
+.lightText {
+  color: rgb(128, 128, 128);
+}
